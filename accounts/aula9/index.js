@@ -86,14 +86,13 @@ function addAmount(accountName, amount) {
         console.log(chalk.green('Valor depositado!'))
     }, 2000)
 }
-function getAccount(accountName) {
+function getAccount(accountName) 
     const accountJson = fs.readFileSync(`accounts/${accountName}.json`, {
         encoding: 'utf-8',
         flag: 'r',
     })
 
     return JSON.parse(accountJson)
-}
 function checkAccount(accountName) {
     if (!fs.existsSync(`accounts/${accountName}.json`)) {
         return false
